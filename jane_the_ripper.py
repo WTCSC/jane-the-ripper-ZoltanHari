@@ -41,8 +41,6 @@ def crack_passwords(wordlist_path, hash_file_path):
                             hash = hashlib.sha256(password.encode()).hexdigest()
                             if hash in hashes_set and hash not in cracked:
                                 cracked[hash] = password
-                case _:
-                    return False
 
     return cracked, hashes_list
 
@@ -51,6 +49,12 @@ def validate_path_to_files(file):
         with open(file, "r"):
             return True
     except FileNotFoundError:
+        return False
+    
+def validate_hash_type(hash_type):
+    if hash_type == "md5" or hash_type == "sha1" or hash_type == "sha256":
+        return True
+    else:
         return False
     
 if __name__ == "__main__":
@@ -73,7 +77,7 @@ if __name__ == "__main__":
             break
         type_out("Please enter the hash type (md5, sha1, sha256)")
         hash_type = input().strip().lower()
-        invalid_hash_type = crack_passwords
+        invalid_hash_type = validate_hash_type
         if invalid_hash_type ==  False:
             type_out("Invalid hash type")
         else:
