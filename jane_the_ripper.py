@@ -10,6 +10,9 @@ def type_out(text, delay=0.03):
         time.sleep(delay)
     print()
 
+RED = '\033[91m'
+GREEN = '\033[92m'
+RESET = '\033[0m'
 
 def crack_passwords(wordlist_path, hash_file_path, hash_type):
     hashes_list = []
@@ -86,7 +89,6 @@ if __name__ == "__main__":
     print()
     for hash in set:
         if hash in fin_hash:
-            print(f"[+] Cracked: {hash} --> '{fin_hash[hash]}'")
+            print(f"{GREEN}[+] Cracked: {hash} --> '{fin_hash[hash]}'{RESET}")
         else:
-            print(f"[-] Failed: {hash} ")
-
+            print(f"{RED}[-] Failed: {hash}{RESET}")

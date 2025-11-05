@@ -34,7 +34,7 @@ cd jane-the-ripper-ZoltanHari
 
 ## Usage Example
 
-![Image showing the script being run](images/jane.png)
+![Image showing the script being run](images/jane_script.png)
 
 ## Testing
 
