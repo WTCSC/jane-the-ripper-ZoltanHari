@@ -3,7 +3,8 @@
 
 # Jane the Ripper
 
-
+Jane the Ripper is a python script that will attempt to crack the hashes in a hash list you provide, and compare it against all the possible passwords in the wordlist you provide.
+The script runs in the terminal and allows you to provide paths to the hash and wordlist files, as well as the hashing algorithm that the hash file used
 
 ## Requirements
 
@@ -23,15 +24,21 @@ cd jane-the-ripper-ZoltanHari
 ```
 ## Usage
 
+1. Start the program with the command **`python3 jane-the-ripper.py`** in the terminal
 
+2. Type in the path to the wordlist you want to use
+
+3. Type in the path to the hashes you want to use
+
+4. Type in type of hash your hashes file is using
 
 ## Usage Example
 
-
+![Image showing the script being run](images/jane.png)
 
 ## Testing
 
-
+To run the tests for Jane the Ripper, you need to enter **`pytest`**  or **`pytest path/to/jane-the-ripper-ZoltanHari`** in the terminal, wait for the tests to finish, and see the result
 
 ## Testing Example
 
