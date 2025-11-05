@@ -79,7 +79,7 @@ def validate_hash_type(hash_type):
         return False
     
 if __name__ == "__main__":
-    type_out("\nWelcome Jane the Ripper\n")
+    type_out("\nWelcome to Jane the Ripper\n")
 
     while True:
         type_out("Enter the path to your wordlist: ")
