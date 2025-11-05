@@ -45,3 +45,5 @@ To run the tests for Jane the Ripper, you need to enter **`pytest`**  or **`pyte
 ![Image showing the command to run the tests and the tests all passing](images/jane_tests.png)
 
 ## Decision Tree 
+
+https://docs.google.com/document/d/1TYJf2Z86x1FCJIzgDb22ioaDDebStFCwW2jlFgi2h2M/edit?tab=t.0
