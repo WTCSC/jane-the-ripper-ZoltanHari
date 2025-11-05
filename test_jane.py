@@ -3,23 +3,40 @@ import hashlib
 from jane_the_ripper import crack_passwords, validate_path_to_files, validate_hash_type
 
 def test_valid_wordlist():
+    """
+    Test that a valid wordlist file path returns True
+    """
     assert validate_path_to_files("wordlist.txt") == True
 
 @pytest.mark.parametrize("valid_hashes", ["hashes_md5.txt", "hashes_sha1.txt", "hashes_sha256.txt"])
 def test_valid_hashes(valid_hashes):
+    """
+    Test that valid hashes file paths return True"""
     assert validate_path_to_files(valid_hashes) is True
 
 def test_invalid_wordlist():
+    """
+    Test that an invalid wordlist file path returns False
+    """
     assert validate_path_to_files("notwordlist.txt") == False
 
 def test_invalid_hashes():
+    """
+    Test that an invalid hashes file path returns False
+    """
     assert validate_path_to_files("nothashes.txt") == False
 
 @pytest.mark.parametrize("hash_type", ["md5", "sha1", "sha256"])
 def test_valid_hash_type(hash_type):
+    """
+    Test that valid hash types return True
+    """
     assert validate_hash_type(hash_type) is True
 
 def test_invalid_hash_type():
+    """
+    Test that an invalid hash type returns False
+    """
     assert validate_hash_type("crc32") == False
 
 def test_crack_passwords_md5(tmp_path):

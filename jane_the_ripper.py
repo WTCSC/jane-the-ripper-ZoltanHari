@@ -41,19 +41,20 @@ def crack_passwords(wordlist_path, hash_file_path, hash_type):
     hashes_set = set(hashes_list)
     cracked = {}
     with open(wordlist_path, "r") as wordlist:
-                if hash_type == "md5":
-                    for line in wordlist:
-                        password = line.strip()
-                        hash = hashlib.md5(password.encode()).hexdigest()
-                        if hash in hashes_set and hash not in cracked:
-                            cracked[hash] = password
-                elif hash_type == "sha1":
+                match hash_type:
+                    case "md5":
+                        for line in wordlist:
+                            password = line.strip()
+                            hash = hashlib.md5(password.encode()).hexdigest()
+                            if hash in hashes_set and hash not in cracked:
+                                cracked[hash] = password
+                    case "sha1":
                         for line in wordlist:
                             password = line.strip()
                             hash = hashlib.sha1(password.encode()).hexdigest()
                             if hash in hashes_set and hash not in cracked:
                                 cracked[hash] = password
-                elif hash_type == "sha256":
+                    case "sha256":
                         for line in wordlist:
                             password = line.strip()
                             hash = hashlib.sha256(password.encode()).hexdigest()
