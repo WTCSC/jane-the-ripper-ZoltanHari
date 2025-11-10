@@ -93,7 +93,7 @@ def test_crack_passwords_sha256(tmp_path):
     Test that crack_passwords correctly finds passwords that match the given SHA256 hashes.
     """
 
-    wordlist_file = tmp_path / "ordlist.txt"
+    wordlist_file = tmp_path / "wordlist.txt"
     wordlist_file.write_text("password\nhello\nadmin\n")
 
     correct_hash = hashlib.sha256("hello".encode()).hexdigest()
